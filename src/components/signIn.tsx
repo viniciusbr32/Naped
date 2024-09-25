@@ -1,9 +1,9 @@
-import { Input } from './ui/input'
-import { AtSign, User, Lock } from './iconsForm'
-import { Button } from './ui/button'
 import { Link } from 'react-router-dom'
+import { User, Lock } from './iconsForm'
+import { Button } from './ui/button'
+import { Input } from './ui/input'
 
-export function SignUp() {
+export function SignIn() {
   return (
     <div
       className="flex flex-col items-center justify-center w-full"
@@ -13,18 +13,12 @@ export function SignUp() {
         naped
       </span>
 
-      <h1 className="mt-8 text-5xl text-center">Faça uma conta</h1>
+      <h1 className="mt-8 text-5xl text-center">Entrar na conta</h1>
 
       <form className="mt-20 space-y-6">
         <div>
           <Input text="Digite seu usuario" type="text">
             <User />
-          </Input>
-        </div>
-
-        <div>
-          <Input text="Digite seu e-mail" type="email">
-            <AtSign />
           </Input>
         </div>
 
@@ -35,20 +29,14 @@ export function SignUp() {
         </div>
 
         <div>
-          <Input text="Digite novamente sua senha" type="password">
-            <Lock />
-          </Input>
-        </div>
-
-        <div>
           <Button className="text-lg" size="lg">
-            Criar uma conta
+            Entrar na conta
           </Button>
         </div>
 
-        <Link to="/signin">
+        <Link to="/signup">
           <p className="mt-10 text-center text-transparent bg-clip-text bg-text-gradient">
-            Já tenho uma conta
+            Criar uma conta
           </p>
         </Link>
       </form>
