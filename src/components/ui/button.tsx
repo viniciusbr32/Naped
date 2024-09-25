@@ -6,8 +6,7 @@ const button = tv({
 
   variants: {
     variant: {
-      primary:
-        'bg-custom-gradient text-zinc-50 hover:bg-blue-600 ring-blue-600',
+      primary: 'bg-text-gradient text-zinc-50 hover:bg-blue-600 ring-blue-600',
       secondary: 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800 ring-zinc-900',
     },
 
@@ -15,6 +14,7 @@ const button = tv({
       default: 'px-4 py-2.5',
       sm: 'px-3 py-1.5',
       primary: 'px-8 py-3',
+      lg: 'w-full py-4',
     },
   },
 

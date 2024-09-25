@@ -6,7 +6,13 @@ export default {
       '3xl': '1920px',
     },
     backgroundImage: {
-      'custom-gradient': 'linear-gradient(223.75deg, #00A3FF 4.8%, #0054C6 95.02%)',
+      'text-gradient': 'linear-gradient(223.75deg, #00A3FF 4.8%, #0054C6 95.02%)',
+    },
+    backgroundClip: {
+      text: 'text',
+    },
+    textFillColor: {
+      transparent: 'transparent',
     },
     fontFamily: {
       archivo: ['Archivo', 'sans-serfif'],
