@@ -29,7 +29,7 @@ type ButtonProps = ComponentProps<'button'> & VariantProps<typeof button>
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, ...props }, ref) => {
     return (
-      <button
+      <span
         {...props}
         ref={ref}
         className={button({ variant, size, className })}
