@@ -1,6 +1,21 @@
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { CardsPrincipal } from '../components/cards-principal'
+import { LatestAnimeNews } from '../components/latest-anime-news'
+import { getRecentsAnimes } from '../http/get-recents-animes'
 
 export function Home() {
+  const queryClient = useQueryClient()
+
+  const { data } = useQuery({
+    queryKey: ['recents-animes'],
+    queryFn: getRecentsAnimes,
+  })
+
+  if (!data) {
+    return null
+  }
+  console.log(data)
+
   return (
     <div className="mx-auto max-w-screen-3xl">
       <div className="max-w-[1216px] w-full mx-auto">
@@ -20,6 +35,11 @@ export function Home() {
             {/* {/* <CardsPrincipal heightClass="h-[305px]" /> */}
             <CardsPrincipal />
           </div>
+        </div>
+        <div className="flex items-center gap-8 py-10">
+          {data.map(recent => {
+            return <LatestAnimeNews content={recent} key={recent.id} />
+          })}
         </div>
       </div>
     </div>
