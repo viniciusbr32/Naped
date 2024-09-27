@@ -5,6 +5,7 @@ import { SignUp } from './pages/signUp'
 import { SignIn } from './pages/signIn'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { PageDetails } from './pages/page-details'
+import { Footer } from './components/footer'
 
 const queryClient = new QueryClient()
 
@@ -13,12 +14,14 @@ export const App = () => {
     <QueryClientProvider client={queryClient}>
       <Router>
         <Header />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/posts/:id" element={<PageDetails />} />
           <Route path="/signin" element={<SignIn />} />
         </Routes>
+        <Footer />
       </Router>
     </QueryClientProvider>
   )
