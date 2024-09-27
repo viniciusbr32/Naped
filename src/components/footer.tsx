@@ -6,7 +6,7 @@ export function Footer() {
           Design {''}
           <a
             className="font-bold text-gray-300"
-            href="iuricode.com"
+            href="https://www.iuricode.com"
             target="blank"
           >
             iuricode.com
