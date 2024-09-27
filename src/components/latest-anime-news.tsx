@@ -14,7 +14,7 @@ interface LatestAnimesProps {
 export function LatestAnimeNews({ content }: LatestAnimesProps) {
   const navigate = useNavigate()
 
-  function handleClickPageDetails(id: number) {
+   function handleClickPageDetails(id: number) {
     navigate(`/posts/${id}`)
   }
 
@@ -29,9 +29,9 @@ export function LatestAnimeNews({ content }: LatestAnimesProps) {
       </div>
 
       <div className="flex flex-col flex-1 px-6 ">
-        <div className="flex-1 ">
+        <div className="flex-1">
           <Category category={content.category} />
-          <h3 className="text-xl">{content.title}</h3>
+          <h3 className="text-lg truncate">{content.title}</h3>
 
           <p className="mt-2 mb-4 text-sm text-justify text-gray-400 ">
             {content.resume}

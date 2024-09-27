@@ -16,7 +16,7 @@ export function Home() {
     return null
   }
 
-  console.log(data)
+  const numberData = data.slice(0, 3)
 
   const newReleasesFiltred = data.filter(releases => releases.new === 'yes')
 
@@ -41,16 +41,18 @@ export function Home() {
         </div>
         <h3 className="text-3xl">Notícias mais recentes</h3>
         <div className="flex items-center gap-8 py-10">
-          {data.map(recent => {
+          {numberData.map(recent => {
             return <LatestAnimeNews content={recent} key={recent.id} />
           })}
         </div>
 
-        <h4>Lançamentos</h4>
+        <h4 className="text-2xl">Lançamentos</h4>
 
-        {newReleasesFiltred.map(release => {
-          return <NewReleases key={release.id} />
-        })}
+        <div className="flex items-center gap-8 py-6">
+          {newReleasesFiltred.map(release => {
+            return <NewReleases key={release.id} content={release} />
+          })}
+        </div>
       </div>
     </div>
   )

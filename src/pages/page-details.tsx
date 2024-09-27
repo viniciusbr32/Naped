@@ -26,6 +26,8 @@ export function PageDetails() {
     return null
   }
 
+  const numberData = datas.slice(0, 3)
+
   return (
     <div className="max-w-screen-3xl">
       {data.map(details => (
@@ -58,7 +60,7 @@ export function PageDetails() {
           <h3 className="text-3xl text-start">Notícias mais recentes</h3>
 
           <div className="flex items-center gap-8 py-10">
-            {datas.map(recent => {
+            {numberData.map(recent => {
               return <LatestAnimeNews content={recent} key={recent.id} />
             })}
           </div>
