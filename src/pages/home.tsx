@@ -2,6 +2,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { CardsPrincipal } from '../components/cards-principal'
 import { LatestAnimeNews } from '../components/latest-anime-news'
 import { getRecentsAnimes } from '../http/get-recents-animes'
+import { NewReleases } from '../components/new-releases'
 
 export function Home() {
   const queryClient = useQueryClient()
@@ -14,7 +15,10 @@ export function Home() {
   if (!data) {
     return null
   }
+
   console.log(data)
+
+  const newReleasesFiltred = data.filter(releases => releases.new === 'yes')
 
   return (
     <div className="mx-auto max-w-screen-3xl">
@@ -32,15 +36,21 @@ export function Home() {
 
         <div className="flex gap-8 my-20">
           <div className="flex flex-col gap-8">
-            {/* {/* <CardsPrincipal heightClass="h-[305px]" /> */}
             <CardsPrincipal />
           </div>
         </div>
+        <h3 className="text-3xl">Notícias mais recentes</h3>
         <div className="flex items-center gap-8 py-10">
           {data.map(recent => {
             return <LatestAnimeNews content={recent} key={recent.id} />
           })}
         </div>
+
+        <h4>Lançamentos</h4>
+
+        {newReleasesFiltred.map(release => {
+          return <NewReleases key={release.id} />
+        })}
       </div>
     </div>
   )

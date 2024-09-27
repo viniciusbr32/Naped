@@ -17,3 +17,13 @@ export async function getRecentsAnimes(): Promise<RecentsAnimesProps[]> {
   const data = await response.json()
   return data
 }
+
+export async function getRecentsDetailsAnimes(
+  id: number
+): Promise<RecentsAnimesProps[]> {
+  const response = await fetch(
+    `https://my-json-server.typicode.com/efrontcommunity/data-naped/posts/${id}`
+  )
+  const data = await response.json()
+  return [data]
+}

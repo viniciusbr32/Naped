@@ -1,3 +1,6 @@
+import { useNavigate } from 'react-router-dom'
+import { Category } from './ui/category'
+
 interface LatestAnimesProps {
   content: {
     title: string
@@ -9,8 +12,14 @@ interface LatestAnimesProps {
 }
 
 export function LatestAnimeNews({ content }: LatestAnimesProps) {
+  const navigate = useNavigate()
+
+  function handleClickPageDetails(id: number) {
+    navigate(`/posts/${id}`)
+  }
+
   return (
-    <div className="w-96 h-[522px] rounded-[4px] border border-[#151B26] flex flex-col">
+    <div className="w-96 h-[522px] rounded-[4px] border border-[#151B26] flex flex-col ">
       <div className="w-full h-56">
         <img
           src={content.imageUrl}
@@ -19,21 +28,25 @@ export function LatestAnimeNews({ content }: LatestAnimesProps) {
         />
       </div>
 
-      <div className="flex flex-col flex-1 pl-6">
+      <div className="flex flex-col flex-1 px-6 ">
         <div className="flex-1 ">
-          <span className="block mt-4 mb-6 text-lg text-transparent uppercase bg-clip-text bg-text-gradient">
-            {content.category}
-          </span>
+          <Category category={content.category} />
           <h3 className="text-xl">{content.title}</h3>
 
-          <p className="mt-2 mb-4 text-sm text-gray-400 text-start">
+          <p className="mt-2 mb-4 text-sm text-justify text-gray-400 ">
             {content.resume}
           </p>
         </div>
 
-        <span className="block mt-auto mb-6 text-transparent uppercase tet-lg bg-clip-text bg-text-gradient">
-          Ler mais
-        </span>
+        <button
+          className="flex items-start mt-auto mb-6"
+          type="button"
+          onClick={() => handleClickPageDetails(content.id)}
+        >
+          <span className="text-lg text-transparent uppercase bg-clip-text bg-text-gradient">
+            Ler mais
+          </span>
+        </button>
       </div>
     </div>
   )
