@@ -1,12 +1,10 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { CardsPrincipal } from '../components/cards-principal'
 import { LatestAnimeNews } from '../components/latest-anime-news'
 import { getRecentsAnimes } from '../http/get-recents-animes'
 import { NewReleases } from '../components/new-releases'
 
 export function Home() {
-  const queryClient = useQueryClient()
-
   const { data } = useQuery({
     queryKey: ['recents-animes'],
     queryFn: getRecentsAnimes,

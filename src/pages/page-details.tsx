@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import {
   getRecentsAnimes,
   getRecentsDetailsAnimes,
@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom'
 import { LatestAnimeNews } from '../components/latest-anime-news'
 
 export function PageDetails() {
-  const queryClient = useQueryClient()
   const { id } = useParams()
 
   const idNumero = Number(id)

@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
 import { getCategory } from '../http/get-recents-animes'
 import { LatestAnimeNews } from '../components/latest-anime-news'
@@ -10,8 +10,6 @@ export function Category() {
   const [filtredData, setFiltredData] = useState('')
 
   const categoryString = String(category)
-
-  const queryClient = useQueryClient()
 
   const { data } = useQuery({
     queryKey: ['categories', categoryString],
