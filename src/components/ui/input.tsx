@@ -8,20 +8,33 @@ type InputType =
   | 'date'
   | 'checkbox'
   | 'radio'
+  | 'search'
 
 interface InputProps {
   children?: ReactNode
   text: string
   type: InputType
+  className?: string
+  value?: string
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export function Input({ children, text, type }: InputProps) {
+export function Input({
+  children,
+  text,
+  type,
+  className,
+  value,
+  onChange,
+}: InputProps) {
   return (
     <div className="relative">
       <input
         type={type}
         placeholder={text}
-        className="rounded-[4px] h-14 w-96 border-[#151B26] border pl-10 bg-[#090E18] focus:outline-none"
+        value={value}
+        onChange={onChange}
+        className={`rounded-[4px] h-14 w-${className} border-[#151B26] border pl-10 bg-[#090E18] focus:outline-none`}
       />
       {children}
     </div>

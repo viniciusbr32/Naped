@@ -27,3 +27,13 @@ export async function getRecentsDetailsAnimes(
   const data = await response.json()
   return [data]
 }
+
+export async function getCategory(
+  category: string
+): Promise<RecentsAnimesProps[]> {
+  const response = await fetch(
+    `https://my-json-server.typicode.com/efrontcommunity/data-naped/posts?category=${category}`
+  )
+  const data = await response.json()
+  return data
+}

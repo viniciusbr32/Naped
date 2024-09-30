@@ -17,13 +17,13 @@ export function SignIn() {
 
       <form className="mt-20 space-y-6">
         <div>
-          <Input text="Digite seu usuario" type="text">
+          <Input text="Digite seu usuario" type="text" className="96">
             <User />
           </Input>
         </div>
 
         <div>
-          <Input text="Digite sua senha" type="password">
+          <Input text="Digite sua senha" type="password" className="96">
             <Lock />
           </Input>
         </div>

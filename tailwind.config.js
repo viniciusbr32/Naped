@@ -5,6 +5,7 @@ export default {
     screens: {
       '3xl': '1920px',
     },
+
     backgroundImage: {
       'text-gradient': 'linear-gradient(223.75deg, #00A3FF 4.8%, #0054C6 95.02%)',
     },
@@ -20,6 +21,10 @@ export default {
     extend: {
       backgroundColor: {
         primary: '#06090F',
+      },
+      colors: {
+        'custom-dark': 'rgba(6, 9, 15, 0.4)',
+        'custom-black': '#00A3FF ',
       },
     },
   },

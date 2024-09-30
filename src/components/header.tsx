@@ -11,13 +11,18 @@ export function Header() {
           <Logo />
         </Link>
         <ul className="flex items-center gap-14">
+          <Link to="/">
+            <li>Inicio</li>
+          </Link>
           {HeaderSearch.map(option => (
-            <li
-              className="text-lg capitalize cursor-pointer "
-              key={option.title}
-            >
-              {option.title}
-            </li>
+            <Link key={option.title} to={`${option.title}`}>
+              <li
+                className="text-lg capitalize cursor-pointer "
+                key={option.title}
+              >
+                {option.title}
+              </li>
+            </Link>
           ))}
         </ul>
         <Link to="/signin">

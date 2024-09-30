@@ -4,21 +4,18 @@ interface HeaderSearchOption {
 
 export const HeaderSearch: HeaderSearchOption[] = [
   {
-    title: 'inicio',
-  },
-  {
-    title: 'séries',
+    title: 'Séries',
   },
 
   {
-    title: 'filmes',
+    title: 'Filmes',
   },
 
   {
-    title: 'animes',
+    title: 'Animes',
   },
 
   {
-    title: 'jogos',
+    title: 'Jogos',
   },
 ]

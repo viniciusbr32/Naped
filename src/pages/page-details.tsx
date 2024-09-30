@@ -13,7 +13,7 @@ export function PageDetails() {
   const idNumero = Number(id)
 
   const { data } = useQuery({
-    queryKey: ['recents-animes-details', id],
+    queryKey: ['recents-animes-details', idNumero],
     queryFn: () => getRecentsDetailsAnimes(idNumero),
   })
 
